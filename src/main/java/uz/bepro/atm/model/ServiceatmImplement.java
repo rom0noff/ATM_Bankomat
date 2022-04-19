@@ -77,6 +77,7 @@ public class ServiceatmImplement implements ServiceATM {
                     System.out.println("Pulingizni oling : 50 000 sum");
                     System.out.println("1 ta 50 000 talik chiqazadi.");
                     System.out.println("Hisobingizda " + (card.getBalance() - money) + " so'm mablag' qoldi.");
+                    System.out.println("Xizmat haqqi" + (50000 * 0.01));
                 }else System.out.println("Hisobingizda mablag' yetarli emas.!");
                 break;
             }
@@ -87,6 +88,7 @@ public class ServiceatmImplement implements ServiceATM {
                     System.out.println("Pulingizni oling : 100 000 sum");
                     System.out.println("1 ta 100 000 talik chiqazadi.");
                     System.out.println("Hisobingizda " + (card.getBalance() - money) + " so'm mablag' qoldi.");
+                    System.out.println("Xizmat haqqi" + (100000 * 0.01));
                 }else System.out.println("Hisobingizda mablag' yetarli emas.!");
                 break;
             }
@@ -97,6 +99,7 @@ public class ServiceatmImplement implements ServiceATM {
                     System.out.println("Pulingizni oling : 150 000 sum");
                     System.out.println("1 ta 50 000 talik 1 ta 100 000 talik chiqazadi.");
                     System.out.println("Hisobingizda " + (card.getBalance() - money) + " so'm mablag' qoldi.");
+                    System.out.println("Xizmat haqqi" + (150000 * 0.01));
                 }else System.out.println("Hisobingizda mablag' yetarli emas.!");
                 break;
             }
@@ -107,37 +110,74 @@ public class ServiceatmImplement implements ServiceATM {
                     System.out.println("Pulingizni oling : 200 000 sum");
                     System.out.println("2 ta 100 000 talik chiqazadi.");
                     System.out.println("Hisobingizda " + (card.getBalance() - money) + " so'm mablag' qoldi.");
+                    System.out.println("Xizmat haqqi" + (20000 * 0.01));
                 }else System.out.println("Hisobingizda mablag' yetarli emas.!");
                 break;
             }
             case 5 : {
+                out:
                 System.out.println("Summani kiriting : ");
                 money = scanner.nextDouble();
-                if(money >= 10000){
-                double moneySum = (money + money * 0.01);
-                if(card.getBalance() >= moneySum){
-                    System.out.println("       ==========Chek:========");
-                    System.out.println("Pulingizni oling : " + money + " sum.");
-//                    while (moneySum >= 100000) {
-//                        moneySum = money / 100000;
-//                    }
-//                    while (money >= 50000) {
-//                        double sum1 = ((money - moneySum * 100000) / 50000);
-//                    }
-//                    while (moneySum >= 20000) {
-//                        moneySum = money / 20000;
-//                    }
-//                    while (moneySum >= 10000) {
-//                        moneySum = money / 10000;
-//                    }
-//                    System.out.println("2 ta 100 000 talik chiqazadi.");
-                    System.out.println("Hisobingizda " + (card.getBalance() - moneySum) + " so'm mablag' qoldi.");
-                }else {
-                    System.out.println("Hisobingizda mablag' yetarli emas.!");
+                double sum1=money,sum2,sum3,sum4,sum5;
+                if(money >= 10000) {
+                    if(money % 5000 == 0){
+                    double moneySum = (money + money * 0.01);
+                    if (card.getBalance() >= moneySum) {
+                        int count100 = 0;
+                        while (sum1 >= 100000) {
+                            sum1 -= 100000;
+                            count100++;
+                        }
+                        int count50 = 0;
+                        sum2 = money - count100 * 100000;
+                        while (sum2 >= 50000) {
+//                        sum2 = ((money - count100 * 100000) / 5);
+                            sum2 -= 50000;
+                            count50++;
+                        }
+                        int count20 = 0;
+                        sum3 = money - count100 * 100000 - count50 * 50000;
+                        while (sum3 >= 20000) {
+//                        sum3 = (money - count100 * 100000 - count50 * 50000) / 2;
+                            sum3 -= 20000;
+                            count20++;
+                        }
+                        int count10 = 0;
+                        sum4 = (money - count100 * 100000 - count50 * 50000 - 20000 * count20);
+                        while (sum4 >= 10000) {
+//                        sum4 = (money - count100 * 100000 - count50 * 50000 - count20 * 20000) / 1;
+                            sum4 -= 10000;
+                            count10++;
+                        }
+                        int count5 = 0;
+                        sum5 = (money - count100 * 100000 - count50 * 50000 - 20000 * count20 - count10 * 10000);
+                        while (sum5 >= 5000) {
+                          sum5 -= 5000;
+                            count5++;
+                        }
+                        System.out.println("       ==========Chek:========");
+                        System.out.println("Pulingizni oling : " + money + " sum.");
+                        System.out.println(count100 + " ta 100 000 talik chiqazadi.");
+                        System.out.println(count50 + " ta 50 000 talik chiqazadi.");
+                        System.out.println(count20 + " ta 20 000 talik chiqazadi.");
+                        System.out.println(count10 + " ta 10 000 talik chiqazadi.");
+                        System.out.println(count5 + " ta 5 000 talik chiqazadi.");
+                        System.out.println("Hisobingizda " + (card.getBalance() - moneySum) + " so'm mablag' qoldi.");
+                        System.out.println("Xizmat haqqi" + (money * 0.01));
+                    } else {
+                        System.out.println("Hisobingizda mablag' yetarli emas.!");
+                    }
+                        System.out.println("================================");
+                }
+                    else {
+                        System.out.println("Bu bankomatda faqat 5.000  10.000  20.000  50.000  100.000 talik beradi 1.000  2.000 talik mayda pul yo'q!!!");
+                    }
+                    System.out.println("==================================");
+                }
+                else {
+                    System.out.println("Minimal summa 10 000 so'm.");
                 }
                 break;
-
-                }else System.out.println("Minimal summa 10 000 so'm.");
             }
 
         }
@@ -224,6 +264,14 @@ public class ServiceatmImplement implements ServiceATM {
                 break;
             }
         }
+
+    }
+
+    @Override
+    public void message(Card card) {
+        System.out.println("Telefon raqamingizni kiriting.");
+        System.out.print("+998 ");
+        int tel = scanner.nextInt();
 
     }
 }

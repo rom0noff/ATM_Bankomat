@@ -8,4 +8,5 @@ public interface ServiceATM {
     boolean checkPin(Card card);
     boolean replenishaccount(Card card);
     void currencyexchange(Card card);
+    void message(Card card);
 }
