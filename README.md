@@ -50,4 +50,4 @@ after you enter ->
 
 You can use any service ATM works in the same way.
 
-Please to see the project [Click](https://github.com/Urunov/Java-Core-Projects/tree/master/ATM-Bank)
+Please to see the project [Click](https://github.com/rom0noff/ATM_Bankomat/tree/master/src/main/java/uz/bepro/atm/model)
