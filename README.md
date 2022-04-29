@@ -41,7 +41,7 @@ after you enter ->
    * The program will open a list of services for you
    <img width="489" alt="Screen Shot 2022-04-25 at 18 14 37" src="https://user-images.githubusercontent.com/99829336/165099533-2ac3bddd-b092-48fe-a62f-165c3c5991fa.png">
 
-   If you want to see the program's service list code, -> [Click](https://github.com/Urunov/Java-Core-Projects/blob/master/ATM-Bank/src/main/java/uz/bepro/atm/model/uzbek/UzbekchaLogics.java)
+   If you want to see the program's service list code, -> [Click](https://github.com/rom0noff/ATM_Bankomat/blob/master/src/main/java/uz/bepro/atm/model/uzbek/UzbekchaLogics.java)
     
    * Enter the order number you want to use the service for
 
