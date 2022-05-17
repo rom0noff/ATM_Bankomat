@@ -1,11 +1,6 @@
 package uz.bepro.atm.model;
 
-/**
- * @Company: {}
- * @Author: {urunov}
- * @Project: {Polymorphism}
- * @Date: {2022/04/06 && 11:53 PM}
- */
+
 public class Card {
     public static int lenght;
     //
